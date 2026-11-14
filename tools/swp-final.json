@@ -1,0 +1,483 @@
+{
+ "issues": {
+  "E1-01": {
+   "number": 9,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E1-02": {
+   "number": 10,
+   "scope": 3,
+   "complexity": 0,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E1-03": {
+   "number": 11,
+   "scope": 2,
+   "complexity": 0,
+   "swp": 2,
+   "confidence": "high"
+  },
+  "E1-04": {
+   "number": 12,
+   "scope": 3,
+   "complexity": 1,
+   "swp": 4,
+   "confidence": "high"
+  },
+  "E2-01": {
+   "number": 13,
+   "scope": 2,
+   "complexity": 2,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E2-02": {
+   "number": 14,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E2-03": {
+   "number": 15,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E2-04": {
+   "number": 16,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E3-01": {
+   "number": 17,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E3-02": {
+   "number": 18,
+   "scope": 5,
+   "complexity": 3,
+   "swp": 10,
+   "confidence": "high"
+  },
+  "E3-03": {
+   "number": 19,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "medium"
+  },
+  "E3-04": {
+   "number": 20,
+   "scope": 3,
+   "complexity": 1,
+   "swp": 4,
+   "confidence": "high"
+  },
+  "E3-05": {
+   "number": 21,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E3-06": {
+   "number": 22,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E3-07a": {
+   "number": 24,
+   "scope": 1,
+   "complexity": 1,
+   "swp": 1,
+   "confidence": "high"
+  },
+  "E3-07b": {
+   "number": 25,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E3-07c": {
+   "number": 26,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E4-01": {
+   "number": 27,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "medium"
+  },
+  "E4-02": {
+   "number": 28,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "high"
+  },
+  "E4-03": {
+   "number": 29,
+   "scope": 5,
+   "complexity": 3,
+   "swp": 10,
+   "confidence": "high"
+  },
+  "E4-04": {
+   "number": 30,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E4-05": {
+   "number": 31,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E4-06": {
+   "number": 32,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E4-07": {
+   "number": 33,
+   "scope": 3,
+   "complexity": 1,
+   "swp": 4,
+   "confidence": "high"
+  },
+  "E4-08": {
+   "number": 34,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E5-01": {
+   "number": 35,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E5-02": {
+   "number": 36,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E6-01": {
+   "number": 37,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "high"
+  },
+  "E6-02": {
+   "number": 38,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E6-03": {
+   "number": 39,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E6-04": {
+   "number": 40,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E6-05": {
+   "number": 41,
+   "scope": 3,
+   "complexity": 1,
+   "swp": 4,
+   "confidence": "high"
+  },
+  "E6-06a": {
+   "number": 43,
+   "scope": 2,
+   "complexity": 0,
+   "swp": 2,
+   "confidence": "high"
+  },
+  "E6-06b": {
+   "number": 44,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E6-06c": {
+   "number": 45,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "high"
+  },
+  "E6-07": {
+   "number": 46,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E6-08": {
+   "number": 47,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E6-09": {
+   "number": 48,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "high"
+  },
+  "E7-01": {
+   "number": 49,
+   "scope": 2,
+   "complexity": 2,
+   "swp": 3,
+   "confidence": "low"
+  },
+  "E7-02": {
+   "number": 50,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E7-03": {
+   "number": 51,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "medium"
+  },
+  "E7-04": {
+   "number": 52,
+   "scope": 5,
+   "complexity": 1,
+   "swp": 6,
+   "confidence": "high"
+  },
+  "E7-05a": {
+   "number": 54,
+   "scope": 2,
+   "complexity": 2,
+   "swp": 3,
+   "confidence": "medium"
+  },
+  "E7-05b": {
+   "number": 55,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "medium"
+  },
+  "E7-05c": {
+   "number": 56,
+   "scope": 2,
+   "complexity": 2,
+   "swp": 3,
+   "confidence": "medium"
+  },
+  "E7-05d": {
+   "number": 57,
+   "scope": 1,
+   "complexity": 2,
+   "swp": 2,
+   "confidence": "high"
+  },
+  "E7-05e": {
+   "number": 58,
+   "scope": 3,
+   "complexity": 3,
+   "swp": 6,
+   "confidence": "high"
+  },
+  "E7-05f": {
+   "number": 59,
+   "scope": 5,
+   "complexity": 2,
+   "swp": 8,
+   "confidence": "medium"
+  },
+  "E7-06": {
+   "number": 60,
+   "scope": 5,
+   "complexity": 5,
+   "swp": 15,
+   "confidence": "medium"
+  },
+  "E7-07": {
+   "number": 61,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "high"
+  },
+  "E7-08": {
+   "number": 62,
+   "scope": 3,
+   "complexity": 2,
+   "swp": 5,
+   "confidence": "high"
+  },
+  "E8-01": {
+   "number": 63,
+   "scope": 1,
+   "complexity": 0,
+   "swp": 1,
+   "confidence": "high"
+  },
+  "E8-02": {
+   "number": 64,
+   "scope": 2,
+   "complexity": 1,
+   "swp": 3,
+   "confidence": "medium"
+  },
+  "E8-03": {
+   "number": 65,
+   "scope": 5,
+   "complexity": 1,
+   "swp": 6,
+   "confidence": "medium"
+  },
+  "E8-04": {
+   "number": 66,
+   "scope": 1,
+   "complexity": 1,
+   "swp": 1,
+   "confidence": "high"
+  },
+  "E8-05": {
+   "number": 67,
+   "scope": 5,
+   "complexity": 3,
+   "swp": 10,
+   "confidence": "medium"
+  },
+  "E8-06": {
+   "number": 68,
+   "scope": 5,
+   "complexity": 3,
+   "swp": 10,
+   "confidence": "medium"
+  }
+ },
+ "parents": {
+  "1": {
+   "status": "derived",
+   "swp": 14
+  },
+  "2": {
+   "status": "derived",
+   "swp": 19
+  },
+  "3": {
+   "status": "derived",
+   "swp": 48
+  },
+  "4": {
+   "status": "derived",
+   "swp": 50
+  },
+  "5": {
+   "status": "derived",
+   "swp": 11
+  },
+  "6": {
+   "status": "derived",
+   "swp": 57
+  },
+  "7": {
+   "status": "derived",
+   "swp": 71
+  },
+  "8": {
+   "status": "derived",
+   "swp": 31
+  },
+  "23": {
+   "status": "derived",
+   "swp": 7
+  },
+  "42": {
+   "status": "derived",
+   "swp": 13
+  },
+  "53": {
+   "status": "derived",
+   "swp": 28
+  }
+ },
+ "total": 301,
+ "calibrationStatus": "accepted",
+ "representatives": [
+  {
+   "number": 24,
+   "reasons": [
+    "minimum"
+   ]
+  },
+  {
+   "number": 40,
+   "reasons": [
+    "lower-median"
+   ]
+  },
+  {
+   "number": 60,
+   "reasons": [
+    "maximum"
+   ]
+  },
+  {
+   "number": 18,
+   "reasons": [
+    "outlier"
+   ]
+  },
+  {
+   "number": 49,
+   "reasons": [
+    "lowest-confidence"
+   ]
+  }
+ ]
+}

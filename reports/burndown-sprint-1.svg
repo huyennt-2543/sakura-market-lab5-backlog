@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="56" y="24" font-size="15" font-weight="600" fill="#1f2328">Burndown Sprint 1 (2026-11-09 → 2026-11-20) — SWP còn lại · số liệu giả lập</text>
+<line x1="56" x2="696" y1="316" y2="316" stroke="#e5e7eb"/><text x="48" y="320" text-anchor="end" fill="#57606a">0</text>
+<line x1="56" x2="696" y1="247.78181818181818" y2="247.78181818181818" stroke="#e5e7eb"/><text x="48" y="251.78181818181818" text-anchor="end" fill="#57606a">14</text>
+<line x1="56" x2="696" y1="179.5636363636364" y2="179.5636363636364" stroke="#e5e7eb"/><text x="48" y="183.5636363636364" text-anchor="end" fill="#57606a">28</text>
+<line x1="56" x2="696" y1="116.2181818181818" y2="116.2181818181818" stroke="#e5e7eb"/><text x="48" y="120.2181818181818" text-anchor="end" fill="#57606a">41</text>
+<line x1="56" x2="696" y1="48" y2="48" stroke="#e5e7eb"/><text x="48" y="52" text-anchor="end" fill="#57606a">55</text>
+<text x="120" y="334" text-anchor="middle" fill="#57606a">09/11</text>
+<text x="184" y="334" text-anchor="middle" fill="#57606a">10/11</text>
+<text x="248" y="334" text-anchor="middle" fill="#57606a">11/11</text>
+<text x="312" y="334" text-anchor="middle" fill="#57606a">12/11</text>
+<text x="376" y="334" text-anchor="middle" fill="#57606a">13/11</text>
+<text x="440" y="334" text-anchor="middle" fill="#57606a">16/11</text>
+<text x="504" y="334" text-anchor="middle" fill="#57606a">17/11</text>
+<text x="568" y="334" text-anchor="middle" fill="#57606a">18/11</text>
+<text x="632" y="334" text-anchor="middle" fill="#57606a">19/11</text>
+<text x="696" y="334" text-anchor="middle" fill="#57606a">20/11</text>
+<text x="56" y="334" text-anchor="middle" fill="#57606a">bắt đầu</text>
+<path d="M56,48 L120.0,74.8 L184.0,101.6 L248.0,128.4 L312.0,155.2 L376.0,182.0 L440.0,208.8 L504.0,235.6 L568.0,262.4 L632.0,289.2 L696.0,316.0" fill="none" stroke="#8c959f" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M56,48 L120.0,48.0 L184.0,48.0 L248.0,62.6 L312.0,87.0 L376.0,96.7 L440.0,126.0 L504.0,150.3 L568.0,164.9 L632.0,189.3 L696.0,203.9" fill="none" stroke="#cf222e" stroke-width="2.5"/>
+<circle cx="120" cy="48" r="3.5" fill="#cf222e"/>
+<circle cx="184" cy="48" r="3.5" fill="#cf222e"/>
+<circle cx="248" cy="62.618181818181824" r="3.5" fill="#cf222e"/>
+<circle cx="312" cy="86.9818181818182" r="3.5" fill="#cf222e"/>
+<circle cx="376" cy="96.72727272727272" r="3.5" fill="#cf222e"/>
+<circle cx="440" cy="125.96363636363635" r="3.5" fill="#cf222e"/>
+<circle cx="504" cy="150.3272727272727" r="3.5" fill="#cf222e"/>
+<circle cx="568" cy="164.94545454545454" r="3.5" fill="#cf222e"/>
+<circle cx="632" cy="189.3090909090909" r="3.5" fill="#cf222e"/>
+<circle cx="696" cy="203.9272727272727" r="3.5" fill="#cf222e"/>
+<text x="692" y="225.9272727272727" text-anchor="end" fill="#cf222e" font-weight="600">còn 23 SWP</text>
+<g transform="translate(56,358)"><line x1="0" x2="24" y1="0" y2="0" stroke="#8c959f" stroke-width="2" stroke-dasharray="6 4"/><text x="30" y="4" fill="#1f2328">Lý tưởng</text>
+<line x1="110" x2="134" y1="0" y2="0" stroke="#cf222e" stroke-width="2.5"/><text x="140" y="4" fill="#1f2328">Thực tế (chỉ tính issue Done)</text></g>
+</svg>
