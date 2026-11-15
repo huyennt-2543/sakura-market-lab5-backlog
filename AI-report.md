@@ -2,6 +2,8 @@
 
 Công cụ: Claude Code (desktop) với bộ skill Takumi. AI làm phần đọc, soạn, chạy script và gọi GitHub. Người (học viên) chốt các quyết định, review điểm SWP mẫu và duyệt nội dung trước khi nộp.
 
+**Thời gian thực tế:** 11/11 → 15/11/2026, tổng **8 giờ** người tham gia: chốt hướng, trả lời câu hỏi của AI, review 5 issue SWP mẫu, cấp quyền GitHub, duyệt xóa / push, đọc lại tài liệu. Không tính thời gian AI tự chạy.
+
 ## 1. Skill và prompt cho từng việc
 
 | Việc | Skill / công cụ | Prompt / cách giao việc |
