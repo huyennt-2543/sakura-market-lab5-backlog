@@ -39,3 +39,28 @@ Một điểm **để mở, không giả định**: hàng thủy sản chịu th
 | H-03 | Kiểu làm tròn 奨励金 | Ô chọn 3 kiểu (SCR-SET-012 E21) · cố định theo BR-INC-01 | Cố định 切り捨て (P-04) | RFP đã nói rõ |
 | H-04 | Chạy job hằng ngày bằng gì | `pg_cron` hoặc Vercel Cron gọi API có khóa bí mật (gap G-H1) | `pg_cron` | Chạy cạnh dữ liệu, không phải mở thêm API có khóa. Còn rủi ro gói Supabase (xem #19) |
 | H-05 | Break backlog từ đâu | Từ 31 gap của `gap-analysis.md` · break lại toàn bộ 62 màn LAB-1 | Từ gap LAB-4 + epic 完納奨励金 mới | Prototype đã chạy phần nền; break lại toàn bộ sẽ đếm trùng việc đã làm (G-08) |
+
+## Từ viết tắt và mã dùng trong file này
+
+| Viết tắt / mã | Nghĩa |
+|---|---|
+| SWP | Standard Work Point — điểm khối lượng công việc chuẩn của skill `tkm:sun-estimate`. Mỗi issue chấm 2 trục: Scope (độ rộng: số màn, bảng, lớp) và Complexity (độ khó bên trong: trạng thái, thuật toán, migration, rủi ro vận hành); SWP tra từ bảng nhân cố định Scope × Complexity. Thang: rất dễ 1–2, dễ 3–5, vừa 6–12, khó 13–25, rất khó 26+. Không phải giờ: bài này quy 1 SWP = 3 giờ |
+| LAB-1 / LAB-2 / LAB-4 | Các bài thực hành trước: LAB-1 đọc RFP, estimate, WBS (8 file Excel); LAB-2 prototype Next.js + Supabase; LAB-4 bộ thiết kế `specs/` (wireframe, kiến trúc, ADR, spec màn hình, gap-analysis) |
+| RFP | Request for Proposal — tài liệu yêu cầu của khách (`product-a-rfp-ja-v1.0-rc7`). Không chép vào repo |
+| FIN-01, FIN-02 | Mã câu hỏi nhóm tài chính trong bảng hỏi RFP của LAB-1. FIN-01: ngày thanh toán lấy từ đâu (trả lời giả định: nhập tay hoặc import CSV). FIN-02: chi tiết công thức 完納奨励金 (trả lời giả định: kỳ tháng, tỷ lệ theo bậc doanh số, hạn N ngày) |
+| F-nn | Mã feature trong フィーチャー一覧 của LAB-1 (ví dụ F-19 = tính 完納奨励金, F-21 = 14 báo cáo) |
+| FN-xxx-nnn | Mã chức năng trong 機能一覧 của LAB-1 (ví dụ FN-SET-007 = engine tính 完納奨励金) |
+| BR-xxx-nn | Business Rule — mã quy tắc nghiệp vụ dùng chung từ LAB-1/LAB-4 (ví dụ BR-INC-01 công thức 完納奨励金, BR-RULE-01 Maker ≠ Checker và tối đa 4 lần/năm, BR-PERM-01 tư cách người mua) |
+| BLnnn | Behavior Logic — số mục trong `07-business-rules/behavior-logic.md` của LAB-4 (ví dụ BL010 vòng đời phiên bản quy tắc) |
+| SCR-xxx-nnn | Mã màn hình theo 画面一覧 LAB-1. Nhóm: COM chung, IAM tài khoản, PAR người tham gia, LOT lô hàng, TRD giao dịch, DEL giao hàng, SET chốt sổ / 精算 / 奨励金, RPT báo cáo, ADM quản trị, AUD kiểm toán |
+| SCOPE-OUT-nn | Mục RFP ghi rõ nằm ngoài phạm vi (SCOPE-OUT-05: liên kết ngân hàng, quản lý công nợ) |
+| G-A1, G-C2… (gap) | Mã dòng trong `gap-analysis.md` của LAB-4: chỗ prototype LAB-2 còn làm khác thiết kế. Nhóm A giấy phép, B ngày nghiệp vụ, C quy tắc vận hành, D giao dịch / chốt sổ, E giao hàng, F phân quyền / audit, H hạ tầng / dữ liệu mẫu |
+| P-nn / G-nn / H-nn | Mã dòng trong PREMISE.md của LAB-5: P = spec sửa so với LAB-4, G = giả định bổ sung, H = hướng đã chốt. Issue trỏ ngược về các mã này |
+| #nn | Số issue trên GitHub (ví dụ #7 = epic 完納奨励金, #53 = engine tính) |
+| BE / FE / QA | Backend / Frontend / Quality Assurance (kiểm thử). BE-1, FE-2, QA-1… là vai trò giả định trong đội, không phải người thật |
+| BrSE | Bridge System Engineer — kỹ sư cầu nối, làm việc trực tiếp với khách Nhật |
+| RPC | Remote Procedure Call — ở đây là hàm trong Postgres (Supabase) mà API gọi tới; quy tắc nghiệp vụ cần nguyên tử nằm trong RPC (ADR-002 LAB-4) |
+| API | Application Programming Interface — ở đây là Route Handler của Next.js mà màn hình gọi |
+| CSV | Comma-Separated Values — file bảng dạng văn bản, dùng để import ngày thanh toán |
+| pg_cron | Extension của Postgres để chạy job theo lịch (dùng cho job kích hoạt quy tắc, hết hạn giấy phép, tính 奨励金) |
+| SETTLEMENT, SETTLEMENT_MANAGER, RULE_ADMIN… | Mã vai trò trong hệ thống (PREMISE LAB-4 §5): SETTLEMENT 照合事務局 (精算), SETTLEMENT_MANAGER 照合部門長 (duyệt), RULE_ADMIN người lập quy tắc, SYS_ADMIN quản trị hệ thống, MARKET_ADMIN quản lý chợ, AUDITOR kiểm toán nội bộ |

@@ -33,6 +33,7 @@ Công cụ: Claude Code (desktop) với bộ skill Takumi. AI làm phần đọc
 | Spec LAB-4 do AI viết trước đó tự mâu thuẫn (làm tròn 3 kiểu ↔ BR-INC-01; `decide_correction` ↔ `approve_correction`) | Đối chiếu chéo khi break, grep tên RPC | PREMISE P-04, P-06 |
 | AI muốn coi hệ số 110/100 là sai vì thủy sản chịu thuế 8% | RFP ghi rõ 110/100 | Không sửa; để mở và hỏi khách (#49 câu 4). Giả định không được đè lên điều RFP đã nói |
 | Nhãn trên ảnh burndown đè lên đường biểu đồ | Mở ảnh trong trình duyệt, chụp màn hình | Dời nhãn, sinh lại ảnh |
+| Tài liệu dùng "SWP" và nhiều mã (BR, BL, FIN, G-A1…) mà không giải thích | Người đọc hỏi "SWP là gì" | Thêm bảng "Từ viết tắt và mã dùng trong file này" vào cuối mỗi file (chỉ liệt kê từ file đó dùng) và tab thuật ngữ trong Google Sheet nộp bài |
 | Lỗi kỹ thuật khi chạy: heredoc bash vỡ, Python in tiếng Việt lỗi mã hóa cp932 trên Windows, một lệnh bị ngắt giữa chừng | Lệnh trả lỗi; kiểm tra lại thư mục `reports/` chưa có file | Ghi file bằng công cụ ghi file, bật `PYTHONUTF8=1`, chạy lại và kiểm payload nhúng (57 việc, 301 SWP, không gọi mạng) |
 
 ## 3. Điểm đặc biệt trong cách dùng AI
@@ -47,3 +48,21 @@ Công cụ: Claude Code (desktop) với bộ skill Takumi. AI làm phần đọc
 - Số liệu sprint là giả lập do AI đặt ra, nên báo cáo chỉ chứng minh được **cách** báo cáo, chưa chứng minh ước lượng đúng. Làm thật phải lấy giờ thực tế từ Project (trường "Giờ thực tế") thay cho file giả lập.
 - Phần lớn token tốn vào việc đọc lại spec LAB-4 và file Excel. Nếu LAB-4 có sẵn bản tóm tắt dạng dữ liệu (mã BR, bảng, RPC) thì bước break sẽ rẻ hơn nhiều.
 - Chưa có ý tưởng tốt cho việc kiểm tự động "báo cáo có tô hồng không" ngoài luật đặt trước (chỉ tính Done, luôn có dự báo xấu). Hiện vẫn dựa vào người đọc lại.
+
+## Từ viết tắt và mã dùng trong file này
+
+| Viết tắt / mã | Nghĩa |
+|---|---|
+| SWP | Standard Work Point — điểm khối lượng công việc chuẩn của skill `tkm:sun-estimate`. Mỗi issue chấm 2 trục: Scope (độ rộng: số màn, bảng, lớp) và Complexity (độ khó bên trong: trạng thái, thuật toán, migration, rủi ro vận hành); SWP tra từ bảng nhân cố định Scope × Complexity. Thang: rất dễ 1–2, dễ 3–5, vừa 6–12, khó 13–25, rất khó 26+. Không phải giờ: bài này quy 1 SWP = 3 giờ |
+| Scope × Complexity | Hai trục chấm SWP: Scope ∈ {1, 2, 3, 5, 8, 13}, Complexity ∈ {0, 1, 2, 3, 5, 8} |
+| LAB-1 / LAB-2 / LAB-4 | Các bài thực hành trước: LAB-1 đọc RFP, estimate, WBS (8 file Excel); LAB-2 prototype Next.js + Supabase; LAB-4 bộ thiết kế `specs/` (wireframe, kiến trúc, ADR, spec màn hình, gap-analysis) |
+| RFP | Request for Proposal — tài liệu yêu cầu của khách (`product-a-rfp-ja-v1.0-rc7`). Không chép vào repo |
+| FIN-01, FIN-02 | Mã câu hỏi nhóm tài chính trong bảng hỏi RFP của LAB-1. FIN-01: ngày thanh toán lấy từ đâu (trả lời giả định: nhập tay hoặc import CSV). FIN-02: chi tiết công thức 完納奨励金 (trả lời giả định: kỳ tháng, tỷ lệ theo bậc doanh số, hạn N ngày) |
+| BR-xxx-nn | Business Rule — mã quy tắc nghiệp vụ dùng chung từ LAB-1/LAB-4 (ví dụ BR-INC-01 công thức 完納奨励金, BR-RULE-01 Maker ≠ Checker và tối đa 4 lần/năm, BR-PERM-01 tư cách người mua) |
+| P-nn / G-nn / H-nn | Mã dòng trong PREMISE.md của LAB-5: P = spec sửa so với LAB-4, G = giả định bổ sung, H = hướng đã chốt. Issue trỏ ngược về các mã này |
+| #nn | Số issue trên GitHub (ví dụ #7 = epic 完納奨励金, #53 = engine tính) |
+| R1〜R6 | Mã rủi ro trễ tiến độ trong progress-report.md |
+| BE / FE / QA | Backend / Frontend / Quality Assurance (kiểm thử). BE-1, FE-2, QA-1… là vai trò giả định trong đội, không phải người thật |
+| RPC | Remote Procedure Call — ở đây là hàm trong Postgres (Supabase) mà API gọi tới; quy tắc nghiệp vụ cần nguyên tử nằm trong RPC (ADR-002 LAB-4) |
+| API | Application Programming Interface — ở đây là Route Handler của Next.js mà màn hình gọi |
+| PYTHONUTF8 | Biến môi trường bắt Python dùng UTF-8, tránh lỗi in tiếng Việt / tiếng Nhật trên Windows |

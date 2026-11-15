@@ -73,3 +73,33 @@ LAB-4 để toàn bộ 完納奨励金 ở mức kiến trúc (một dòng I-06)
 | screen-list SCR-AUD-001 | Có trong danh sách màn và ma trận quyền, không có wireframe + spec | Tạo issue làm rõ #64 |
 | gap G-H1 | Chạy job bằng `pg_cron` hay Vercel Cron | Đã chốt — PREMISE H-04; còn rủi ro gói Supabase ghi ở #19 |
 | gap G-A1 | Không có quy tắc map `buyer` cũ sang 仲卸 / 売買参加者 | Để mở trong #27: dữ liệu prototype là dữ liệu mẫu, BrSE quyết khi làm (Sprint 1 đã xử lý, mất thêm 1 ngày) |
+
+## Từ viết tắt và mã dùng trong file này
+
+| Viết tắt / mã | Nghĩa |
+|---|---|
+| SWP | Standard Work Point — điểm khối lượng công việc chuẩn của skill `tkm:sun-estimate`. Mỗi issue chấm 2 trục: Scope (độ rộng: số màn, bảng, lớp) và Complexity (độ khó bên trong: trạng thái, thuật toán, migration, rủi ro vận hành); SWP tra từ bảng nhân cố định Scope × Complexity. Thang: rất dễ 1–2, dễ 3–5, vừa 6–12, khó 13–25, rất khó 26+. Không phải giờ: bài này quy 1 SWP = 3 giờ |
+| LAB-1 / LAB-2 / LAB-4 | Các bài thực hành trước: LAB-1 đọc RFP, estimate, WBS (8 file Excel); LAB-2 prototype Next.js + Supabase; LAB-4 bộ thiết kế `specs/` (wireframe, kiến trúc, ADR, spec màn hình, gap-analysis) |
+| RFP | Request for Proposal — tài liệu yêu cầu của khách (`product-a-rfp-ja-v1.0-rc7`). Không chép vào repo |
+| FIN-01, FIN-02 | Mã câu hỏi nhóm tài chính trong bảng hỏi RFP của LAB-1. FIN-01: ngày thanh toán lấy từ đâu (trả lời giả định: nhập tay hoặc import CSV). FIN-02: chi tiết công thức 完納奨励金 (trả lời giả định: kỳ tháng, tỷ lệ theo bậc doanh số, hạn N ngày) |
+| F-nn | Mã feature trong フィーチャー一覧 của LAB-1 (ví dụ F-19 = tính 完納奨励金, F-21 = 14 báo cáo) |
+| FR-xxx | Functional Requirement — mã yêu cầu chức năng trong RFP (ví dụ FR-AUDIT-01 nhật ký kiểm toán, FR-INC-03 chênh lệch sang kỳ sau) |
+| BR-xxx-nn | Business Rule — mã quy tắc nghiệp vụ dùng chung từ LAB-1/LAB-4 (ví dụ BR-INC-01 công thức 完納奨励金, BR-RULE-01 Maker ≠ Checker và tối đa 4 lần/năm, BR-PERM-01 tư cách người mua) |
+| BLnnn | Behavior Logic — số mục trong `07-business-rules/behavior-logic.md` của LAB-4 (ví dụ BL010 vòng đời phiên bản quy tắc) |
+| ADR-nnn | Architecture Decision Record — bản ghi quyết định kiến trúc của LAB-4 (ADR-001〜008) |
+| SCR-xxx-nnn | Mã màn hình theo 画面一覧 LAB-1. Nhóm: COM chung, IAM tài khoản, PAR người tham gia, LOT lô hàng, TRD giao dịch, DEL giao hàng, SET chốt sổ / 精算 / 奨励金, RPT báo cáo, ADM quản trị, AUD kiểm toán |
+| RPT-nn | Mã báo cáo cố định trong RFP (ví dụ RPT-07 kết quả 完納奨励金 theo kỳ) |
+| IF-ACC-01 | Interface xuất CSV cho hệ thống kế toán (ngoài Release 1) |
+| DS-INC-EDGE-01 | Bộ dữ liệu test biên cho 完納奨励金 mà RFP yêu cầu khớp 100% |
+| G-A1, G-C2… (gap) | Mã dòng trong `gap-analysis.md` của LAB-4: chỗ prototype LAB-2 còn làm khác thiết kế. Nhóm A giấy phép, B ngày nghiệp vụ, C quy tắc vận hành, D giao dịch / chốt sổ, E giao hàng, F phân quyền / audit, H hạ tầng / dữ liệu mẫu |
+| P-nn / G-nn / H-nn | Mã dòng trong PREMISE.md của LAB-5: P = spec sửa so với LAB-4, G = giả định bổ sung, H = hướng đã chốt. Issue trỏ ngược về các mã này |
+| E1…E8, E7-05a | Key nội bộ của backlog trong `tools/backlog-data.mjs`: E1〜E8 là epic, E7-05 là issue thứ 5 của epic 7, E7-05a là sub-issue. Tiêu đề issue trên GitHub bắt đầu bằng key này, ví dụ `[E7-05a]` |
+| #nn | Số issue trên GitHub (ví dụ #7 = epic 完納奨励金, #53 = engine tính) |
+| BE / FE / QA | Backend / Frontend / Quality Assurance (kiểm thử). BE-1, FE-2, QA-1… là vai trò giả định trong đội, không phải người thật |
+| BrSE | Bridge System Engineer — kỹ sư cầu nối, làm việc trực tiếp với khách Nhật |
+| RPC | Remote Procedure Call — ở đây là hàm trong Postgres (Supabase) mà API gọi tới; quy tắc nghiệp vụ cần nguyên tử nằm trong RPC (ADR-002 LAB-4) |
+| PR | Pull Request — yêu cầu gộp code, nơi review |
+| DB | Database — cơ sở dữ liệu (Postgres trên Supabase) |
+| CSV | Comma-Separated Values — file bảng dạng văn bản, dùng để import ngày thanh toán |
+| PWA | Progressive Web App — web chạy offline như ứng dụng (ngoài Release 1) |
+| pg_cron | Extension của Postgres để chạy job theo lịch (dùng cho job kích hoạt quy tắc, hết hạn giấy phép, tính 奨励金) |

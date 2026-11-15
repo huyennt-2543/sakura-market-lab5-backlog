@@ -61,3 +61,32 @@ LAB-1 tính bằng người-ngày, phần phát triển (BE + FE + design, gồm
 | Ngoài phạm vi LAB-5 | 帳票 113, data migration 42, offline/PWA 31, 通知 25, 会計連携 20, 紛争 16… | — | — | LAB-4 đã để ngoài Release 1 hoặc chỉ ở mức kiến trúc |
 
 Hai nguyên nhân chính của mức giảm 50%: (1) LAB-1 ước cho hệ thống mới trên Java/AWS, LAB-5 làm tiếp trên prototype đã chạy (G-08); (2) LAB-1 nhân thêm FixBug + UT ≈ 2 lần giờ làm, LAB-5 dùng một hệ số 3 giờ/SWP đã gồm test và đã đối chiếu với Sprint 1. Riêng 完納奨励金 giảm ít nhất. Đây cũng là nơi estimate dễ sai nhất, vì công thức còn chờ khách (#49).
+
+## Từ viết tắt và mã dùng trong file này
+
+| Viết tắt / mã | Nghĩa |
+|---|---|
+| SWP | Standard Work Point — điểm khối lượng công việc chuẩn của skill `tkm:sun-estimate`. Mỗi issue chấm 2 trục: Scope (độ rộng: số màn, bảng, lớp) và Complexity (độ khó bên trong: trạng thái, thuật toán, migration, rủi ro vận hành); SWP tra từ bảng nhân cố định Scope × Complexity. Thang: rất dễ 1–2, dễ 3–5, vừa 6–12, khó 13–25, rất khó 26+. Không phải giờ: bài này quy 1 SWP = 3 giờ |
+| Scope × Complexity | Hai trục chấm SWP: Scope ∈ {1, 2, 3, 5, 8, 13}, Complexity ∈ {0, 1, 2, 3, 5, 8} |
+| LAB-1 / LAB-2 / LAB-4 | Các bài thực hành trước: LAB-1 đọc RFP, estimate, WBS (8 file Excel); LAB-2 prototype Next.js + Supabase; LAB-4 bộ thiết kế `specs/` (wireframe, kiến trúc, ADR, spec màn hình, gap-analysis) |
+| FIN-01, FIN-02 | Mã câu hỏi nhóm tài chính trong bảng hỏi RFP của LAB-1. FIN-01: ngày thanh toán lấy từ đâu (trả lời giả định: nhập tay hoặc import CSV). FIN-02: chi tiết công thức 完納奨励金 (trả lời giả định: kỳ tháng, tỷ lệ theo bậc doanh số, hạn N ngày) |
+| BR-xxx-nn | Business Rule — mã quy tắc nghiệp vụ dùng chung từ LAB-1/LAB-4 (ví dụ BR-INC-01 công thức 完納奨励金, BR-RULE-01 Maker ≠ Checker và tối đa 4 lần/năm, BR-PERM-01 tư cách người mua) |
+| SCR-xxx-nnn | Mã màn hình theo 画面一覧 LAB-1. Nhóm: COM chung, IAM tài khoản, PAR người tham gia, LOT lô hàng, TRD giao dịch, DEL giao hàng, SET chốt sổ / 精算 / 奨励金, RPT báo cáo, ADM quản trị, AUD kiểm toán |
+| RPT-nn | Mã báo cáo cố định trong RFP (ví dụ RPT-07 kết quả 完納奨励金 theo kỳ) |
+| P-nn / G-nn / H-nn | Mã dòng trong PREMISE.md của LAB-5: P = spec sửa so với LAB-4, G = giả định bổ sung, H = hướng đã chốt. Issue trỏ ngược về các mã này |
+| E1…E8, E7-05a | Key nội bộ của backlog trong `tools/backlog-data.mjs`: E1〜E8 là epic, E7-05 là issue thứ 5 của epic 7, E7-05a là sub-issue. Tiêu đề issue trên GitHub bắt đầu bằng key này, ví dụ `[E7-05a]` |
+| #nn | Số issue trên GitHub (ví dụ #7 = epic 完納奨励金, #53 = engine tính) |
+| R1〜R6 | Mã rủi ro trễ tiến độ trong progress-report.md |
+| BE / FE / QA | Backend / Frontend / Quality Assurance (kiểm thử). BE-1, FE-2, QA-1… là vai trò giả định trong đội, không phải người thật |
+| PM / TL | Project Manager / Tech Lead |
+| RPC | Remote Procedure Call — ở đây là hàm trong Postgres (Supabase) mà API gọi tới; quy tắc nghiệp vụ cần nguyên tử nằm trong RPC (ADR-002 LAB-4) |
+| SoD | Segregation of Duties — tách nhiệm vụ: người lập và người duyệt phải khác nhau |
+| Maker-Checker | Quy trình 2 người: Maker lập bản nháp, Checker duyệt; dùng cho phiên bản quy tắc vận hành và biểu phí |
+| MFA / TOTP / AAL | Multi-Factor Authentication (xác thực nhiều lớp) / Time-based One-Time Password (mã 6 số theo thời gian) / Authenticator Assurance Level (aal2 = đã qua MFA) |
+| RBAC | Role-Based Access Control — phân quyền theo vai trò |
+| UT | Unit Test — kiểm thử đơn vị |
+| PR | Pull Request — yêu cầu gộp code, nơi review |
+| DB | Database — cơ sở dữ liệu (Postgres trên Supabase) |
+| UI | User Interface — giao diện màn hình |
+| PWA | Progressive Web App — web chạy offline như ứng dụng (ngoài Release 1) |
+| AWS | Amazon Web Services — hạ tầng mà estimate LAB-1 giả định |

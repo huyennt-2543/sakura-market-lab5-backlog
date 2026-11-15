@@ -61,3 +61,21 @@ Dự báo: tốc độ Sprint 1 là 32 SWP/sprint. Còn 269 SWP ⇒ ~8.4 sprint 
 | R4 FE không có việc ở Sprint 1, việc UI dồn về Sprint 3〜5 | #15, #20, #21, #31 | Sprint 3〜5 quá tải FE, kéo theo mốc kết thúc phát triển | Kéo #15, #20 lên đầu Sprint 2 (API của #14, #17 đã có); FE làm khung màn #21 song song với #18 | PM, planning 2026-11-23 |
 | R5 Seed chờ bảng giấy phép → test DB các BR mới thiếu dữ liệu | #12 (chờ #28) | Kiểm thử các issue Sprint 2 | Seed theo từng phần: merge phần đã có, phần giấy phép merge cùng #28 | QA-1, 2026-11-25 |
 | R6 Thiếu kiểm "ngày 1 của tháng" ở #18 lọt sang production sẽ làm sai 奨励金 kỳ có đổi biểu phí | #18, #56 | Đúng đắn của số tiền 奨励金 (không phải mốc thời gian) | Không merge #18 khi chưa có test cho P-03; thêm ca này vào bộ test vector #59 | BE-1 sửa trước 2026-11-24; QA-1 thêm ca vào #59 |
+
+## Từ viết tắt và mã dùng trong file này
+
+| Viết tắt / mã | Nghĩa |
+|---|---|
+| SWP | Standard Work Point — điểm khối lượng công việc chuẩn của skill `tkm:sun-estimate`. Mỗi issue chấm 2 trục: Scope (độ rộng: số màn, bảng, lớp) và Complexity (độ khó bên trong: trạng thái, thuật toán, migration, rủi ro vận hành); SWP tra từ bảng nhân cố định Scope × Complexity. Thang: rất dễ 1–2, dễ 3–5, vừa 6–12, khó 13–25, rất khó 26+. Không phải giờ: bài này quy 1 SWP = 3 giờ |
+| FIN-01, FIN-02 | Mã câu hỏi nhóm tài chính trong bảng hỏi RFP của LAB-1. FIN-01: ngày thanh toán lấy từ đâu (trả lời giả định: nhập tay hoặc import CSV). FIN-02: chi tiết công thức 完納奨励金 (trả lời giả định: kỳ tháng, tỷ lệ theo bậc doanh số, hạn N ngày) |
+| BR-xxx-nn | Business Rule — mã quy tắc nghiệp vụ dùng chung từ LAB-1/LAB-4 (ví dụ BR-INC-01 công thức 完納奨励金, BR-RULE-01 Maker ≠ Checker và tối đa 4 lần/năm, BR-PERM-01 tư cách người mua) |
+| P-nn / G-nn / H-nn | Mã dòng trong PREMISE.md của LAB-5: P = spec sửa so với LAB-4, G = giả định bổ sung, H = hướng đã chốt. Issue trỏ ngược về các mã này |
+| #nn | Số issue trên GitHub (ví dụ #7 = epic 完納奨励金, #53 = engine tính) |
+| R1〜R6 | Mã rủi ro trễ tiến độ trong progress-report.md |
+| BE / FE / QA | Backend / Frontend / Quality Assurance (kiểm thử). BE-1, FE-2, QA-1… là vai trò giả định trong đội, không phải người thật |
+| BrSE | Bridge System Engineer — kỹ sư cầu nối, làm việc trực tiếp với khách Nhật |
+| PM / TL | Project Manager / Tech Lead |
+| RPC | Remote Procedure Call — ở đây là hàm trong Postgres (Supabase) mà API gọi tới; quy tắc nghiệp vụ cần nguyên tử nằm trong RPC (ADR-002 LAB-4) |
+| DB | Database — cơ sở dữ liệu (Postgres trên Supabase) |
+| UI | User Interface — giao diện màn hình |
+| API | Application Programming Interface — ở đây là Route Handler của Next.js mà màn hình gọi |
