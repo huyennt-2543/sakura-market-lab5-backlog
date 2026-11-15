@@ -71,7 +71,7 @@ LAB-4 để toàn bộ 完納奨励金 ở mức kiến trúc (một dòng I-06)
 | BR-INC-01 ↔ thuế suất thủy sản 8% | Hệ số 110/100 có thể không khớp thuế thực phẩm | Để mở: giữ theo RFP, hỏi trong #49 (câu 4) — không tự đổi công thức khách đã ghi |
 | FIN-01 | "Thanh toán đủ" đo bằng ngày hay số tiền | Giả định — PREMISE G-03 |
 | screen-list SCR-AUD-001 | Có trong danh sách màn và ma trận quyền, không có wireframe + spec | Tạo issue làm rõ #64 |
-| gap G-H1 | Chạy job bằng `pg_cron` hay Vercel Cron | Đã chốt — PREMISE H-04; còn rủi ro gói Supabase ghi ở #19 |
+| gap G-H1 | Chạy job bằng `pg_cron` hay Vercel Cron | Đã sửa thiết kế — PREMISE H-04 (chọn `pg_cron`); rủi ro gói Supabase ghi ở #19 |
 | gap G-A1 | Không có quy tắc map `buyer` cũ sang 仲卸 / 売買参加者 | Để mở trong #27: dữ liệu prototype là dữ liệu mẫu, BrSE quyết khi làm (Sprint 1 đã xử lý, mất thêm 1 ngày) |
 
 ## Từ viết tắt và mã dùng trong file này

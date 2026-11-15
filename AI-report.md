@@ -13,7 +13,7 @@ Công cụ: Claude Code (desktop) với bộ skill Takumi. AI làm phần đọc
 | Break task | Không dùng skill sinh task; AI viết thẳng một file dữ liệu [`tools/backlog-data.mjs`](tools/backlog-data.mjs) | Ràng buộc đặt cho AI: mỗi gap LAB-4 thành issue hoặc ghi lý do không thành; 完納奨励金 tách theo **từng biến của công thức**; issue ≤ 4 ngày; mỗi issue có "Việc cần làm", "Định nghĩa xong" viết thành test được, "Phụ thuộc" |
 | Đưa lên GitHub | Script [`tools/create-github-issues.mjs`](tools/create-github-issues.mjs) gọi `gh api` | Tạo label → epic → issue → nối sub-issue bằng API sub-issue gốc. Số issue được tính trước và script dừng nếu GitHub trả số khác, để phần "Phụ thuộc #số" trong body không bị lệch |
 | Chấm SWP | `tkm:sun-estimate` (+ `tkm:confidence`) | "GitHub issues của repo, #1–#68, 8 epic là container, lý do viết tiếng Việt". Skill chỉ đọc (mọi lệnh gọi GitHub qua cổng kiểm tra quyền `tool_policy.py`, chặn POST/mutation). AI chấm Scope × Complexity cho 57 việc, script của skill kiểm hợp lệ, tự chọn 5 issue mẫu, người review từng issue 2 bước, script render HTML |
-| Ghi SWP lên Project | Script [`tools/sync-github-project.mjs`](tools/sync-github-project.mjs) | Tách khỏi skill chấm vì skill chỉ được đọc. Script đọc SWP từ payload nhúng trong báo cáo HTML ([`tools/export-swp-from-report.mjs`](tools/export-swp-from-report.mjs)), không cho AI gõ lại số, rồi tạo trường và ghi giá trị bằng GraphQL, gom 20 thay đổi / request |
+| Ghi SWP lên Project | Agent chính Claude Code chạy script [`tools/sync-github-project.mjs`](tools/sync-github-project.mjs) | Tách khỏi skill chấm vì skill chỉ được đọc. Script đọc SWP từ payload nhúng trong báo cáo HTML ([`tools/export-swp-from-report.mjs`](tools/export-swp-from-report.mjs)), không cho AI gõ lại số, rồi tạo trường và ghi giá trị bằng GraphQL, gom 20 thay đổi / request. Không dùng agent con: việc ghi là thao tác máy móc trên số đã review, giao cho agent con chỉ thêm rủi ro chép sai |
 | Quy giờ | AI đề xuất, người duyệt | "Một hệ số cố định, có căn cứ, kiểm lại bằng số liệu sprint". Kết quả 3 giờ/SWP, căn cứ ở estimate.md mục 2 |
 | Báo cáo tiến độ | Script [`tools/render-burndown-svg.mjs`](tools/render-burndown-svg.mjs) + AI viết lời | Dữ liệu sprint giả lập đặt trong một file riêng; burndown, bảng trạng thái, tải theo người đều **tính từ file đó**, AI chỉ viết phần diễn giải |
 
@@ -22,7 +22,7 @@ Công cụ: Claude Code (desktop) với bộ skill Takumi. AI làm phần đọc
 **Người review ở các bước:**
 1. Chốt phạm vi và hình thức nộp trước khi AI làm (repo public mới, không public repo code; Sprint 1 = 09/11–20/11).
 2. Review 5 issue mẫu SWP: mỗi issue chọn mức khó rồi chọn điểm. Cả 5 giữ nguyên; lý do và các chỗ đã cân nhắc sửa ghi ở estimate.md mục 1.
-3. Đọc bản nháp các file Markdown trước khi push.
+3. Đọc lại tài liệu sau khi push: phát hiện "SWP" và nhiều mã chưa được giải thích → bổ sung bảng viết tắt; bổ sung số giờ thực tế.
 
 **Vấn đề phát hiện trong output của AI và cách xử lý:**
 
