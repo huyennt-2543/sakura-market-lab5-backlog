@@ -1,7 +1,7 @@
 # Sakura Market — LAB-5 Backlog
 
 - **Dự án:** 桜水産卸売市場 運営支援システム — Release 1
-- **Mã học viên:** huyennt-2543
+- **Mã học viên:** B122543 (GitHub account: huyennt-2543)
 - **Đề:** Product A (sàn đấu giá thủy sản)
 
 ## Tổng quan
